@@ -6,9 +6,9 @@
 
 Simple starter C++ project with:
 
-    - cmake
-    - googletest
-    - vscode integration (ycmd / cmaketools)
+- cmake
+- googletest
+- vscode integration (ycmd / cmaketools)
 
 ## Installation
 
