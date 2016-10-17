@@ -5,6 +5,7 @@
 ## Overview
 
 Simple starter C++ project with:
+
     - cmake
     - googletest
     - vscode integration (ycmd / cmaketools)
@@ -15,7 +16,7 @@ Simple starter C++ project with:
 $ git clone --recursive https://github.com/xwvvvvwx/cpp-boilerplate.git
 ```
 
-## YouCompleteMe
+## Configuration
 
 - Comes with YouCompleteMe integration preconfigured, but you will need to point vscode to an installation:
 
