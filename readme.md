@@ -13,7 +13,6 @@ Simple starter C++ project with:
 
 ```
 $ git clone --recursive https://github.com/xwvvvvwx/cpp-boilerplate.git
-$ cd vendor/YouCompleteMe && ./install.py --all
 ```
 
 ## YouCompleteMe
