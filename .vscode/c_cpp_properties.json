@@ -5,6 +5,7 @@
             "includePath": [
                 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1",
                 "${workspaceRoot}/vendor/gtest/include",
+                "${workspaceRoot}/vendor/boost",
                 "/usr/include"
             ],
             "browse" : {
