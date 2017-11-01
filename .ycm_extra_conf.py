@@ -31,7 +31,22 @@
 # For more information, please refer to <http://unlicense.org/>
 
 import os
+import re
+import subprocess
 import ycm_core
+
+def LoadSystemIncludes():
+    regex = re.compile(r'(?:\#include \<...\> search starts here\:)(?P<list>.*?)(?:End of search list)', re.DOTALL);
+    process = subprocess.Popen(['clang', '-v', '-E', '-x', 'c++', '-'], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE);
+    process_out, process_err = process.communicate('');
+    output = process_out + process_err;
+    includes = [];
+    for p in re.search(regex, str(output).encode('utf8').decode('unicode_escape')).group('list').split('\n'):
+        p = p.strip();
+        if len(p) > 0 and p.find('(framework directory)') < 0:
+            includes.append('-isystem');
+            includes.append(p);
+    return includes;
 
 flags = [
     '-x',
@@ -47,6 +62,8 @@ flags = [
     '-std=c++14',
 ]
 
+systemIncludes = LoadSystemIncludes();
+flags = flags + systemIncludes;
 
 # Set this to the absolute path to the folder (NOT the file!) containing the
 # compile_commands.json file to use that instead of 'flags'. See here for
